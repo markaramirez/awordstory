@@ -62,12 +62,13 @@ function toggleLogin(){
 	}
 }
 function loginRegister(){
+	console.log(document.getElementById("InputEmail1").value + document.getElementById("InputPassword1").value + signIn);
 	var returnValue = postAccount(document.getElementById("InputEmail1").value, document.getElementById("InputPassword1").value, signIn);
 	if(returnValue === "Login Successful"){
 		console.log(returnValue);
 	}
 	else{
-		document.getElementById("signinreply").innerHTML(returnValue);
+		document.getElementById("signinreply").innerHTML = returnValue;
 	}
 }
 

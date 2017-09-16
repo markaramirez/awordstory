@@ -1,5 +1,4 @@
 var POSTS = new Array();
-var reply = "";
 
 var db_functions = (function($){
 	var postPosts = function(topic, body, user_id){
@@ -19,15 +18,20 @@ var db_functions = (function($){
 	var postAccount = function(username, passcode, signIn){
 		return $.ajax({
 			type:"POST",
-			url:"postAccount.php",
+			url:"./postAccount.php",
 			data: {username:username, passcode:passcode, signIn:signIn},
 			success: function(response){
                 console.log(response);
-				reply = response;
+				if(Number.isInteger(parseInt(response))){
+					//TODO: something when login is good
+					document.getElementById("signin").style.display = "none";
+				}
+				else{
+					document.getElementById("signinreply").innerHTML = response;
+				}
 			},
 			error: function(response){
                 console.log(response);
-				reply = response;
 			}
 		});
 	}
@@ -90,10 +94,8 @@ function postPost(topic, body, user_id){
 }
 
 function postAccount(username, passcode, signIn){
-alert("making accounts");
 	$.when(db_functions.postAccount(username, passcode, signIn)).done(function(){
 		console.log("postAccount finish");
-		return reply;
 	});
 }
 

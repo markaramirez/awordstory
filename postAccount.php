@@ -7,15 +7,14 @@
 	}
 	else{
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$password = $_POST['passcode'];
 		$signIn = $_POST['signIn'];
 		
-		if($signIn == true){
+		if($signIn == "true"){
 			$query = "SELECT * FROM `account` WHERE username = '$username' AND password = '$password';";
-			$try-login = mysqli_query($connection, $query);
-			if(mysqli_num_rows($try-login) == 1){
-				
-				echo(mysqli_fetch_array($try-login)[0]['user_id']);
+			$try_login = mysqli_query($connection, $query);
+			if(mysqli_num_rows($try_login) == 1){
+				echo(mysqli_fetch_array($try_login)['user_id']);
 			}
 			else{
 				echo("Wrong Username or Password");
@@ -34,7 +33,9 @@
 					echo("Account was not created");
 				}
 				else{
-					echo("Account created");
+					$query = "SELECT * FROM `account` WHERE username='$username';";
+					$uesr_id = mysqli_query($connection, $query);
+					echo(mysqli_fetch_array($uesr_id)['user_id']);
 				}
 			}
 		}

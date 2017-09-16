@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css"</link>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">A Word Story</a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+      <!-- <a class="navbar-brand" href="#">A Word Story</a> -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,13 +32,13 @@
 
     <div class="container">
       <div id="write">
-        <p></p>
+        <h1>A Word Story</h1>
+        <div class="writeIntro"><p align="left">Write a short story based on the word of the day. When you're done, share it! You can check out everyone else's stories in the 'Community' tab.</p>
+        <p>Today's word of the day: </p></div>
         <h2 class="text-center">Family</h1>
-        <p></p>
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">Write a short story based on the word of the day. When you're done, share it! You can check out everyone else's stories in the 'Community' tab.</label>
           <textarea class="form-control" id="storyTextArea" rows="18"></textarea>
-
+          <p></p>
           <div class="sub"><button type="button" class="btn btn-primary">Submit</button></div>
         </div>
       </div>
@@ -52,7 +52,7 @@
       <div id="About">
       </div>
     </div>
-	
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="script.js"></script>
 	<script src="database.js"></script>

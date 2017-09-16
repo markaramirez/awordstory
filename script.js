@@ -47,3 +47,27 @@ function showAbout(){
 	document.getElementById("Profile").style.display = 'none';
 	document.getElementById("About").style.display = 'block';
 }
+
+var signIn = true;
+function toggleLogin(){
+	if(document.getElementById("sign-in").className === "text-muted"){
+		document.getElementById("sign-in").className = "";
+		document.getElementById("register").className = "text-muted";
+		signIn = true;
+	}
+	else{
+		document.getElementById("register").className = "";
+		document.getElementById("sign-in").className = "text-muted";
+		signIn = false;
+	}
+}
+function loginRegister(){
+	var returnValue = postAccount(document.getElementById("InputEmail1").value, document.getElementById("InputPassword1").value, signIn);
+	if(returnValue === "Login Successful"){
+		console.log(returnValue);
+	}
+	else{
+		document.getElementById("signinreply").innerHTML(returnValue);
+	}
+}
+

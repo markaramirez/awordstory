@@ -1,4 +1,5 @@
 var POSTS = new Array();
+var reply = "";
 
 var db_functions = (function($){
 	var postPosts = function(topic, body, user_id){
@@ -13,21 +14,23 @@ var db_functions = (function($){
                 console.log(response);
 			}
 		});
-	};
+	}
 	
-	var postAccount = function(username, passcode){
+	var postAccount = function(username, passcode, signIn){
 		return $.ajax({
 			type:"POST",
 			url:"postAccount.php",
-			data: {username:username, passcode:passcode},
+			data: {username:username, passcode:passcode, signIn:signIn},
 			success: function(response){
                 console.log(response);
+				reply = response;
 			},
 			error: function(response){
                 console.log(response);
+				reply = response;
 			}
 		});
-	};
+	}
 	
 	var postVotes = function(user_id, post_id, vote){
 		return $.ajax({
@@ -41,7 +44,7 @@ var db_functions = (function($){
                 console.log(response);
 			}
 		});
-	};
+	}
 	
 	var getAllPosts = function(){
 		return $.ajax({
@@ -55,7 +58,7 @@ var db_functions = (function($){
                 console.log(response);
 			}
 		});
-	};
+	}
 	
 	var getUserPosts = function(user_id){
 		return $.ajax({
@@ -69,7 +72,7 @@ var db_functions = (function($){
                 console.log(response);
 			}
 		});
-	};
+	}
 	
 	return{
 		postPosts: postPosts,
@@ -86,9 +89,11 @@ function postPost(topic, body, user_id){
 	});
 }
 
-function postAccount(username, passcode){
-	$.when(db_functions.postAccount(username, passcode)).done(function(){
+function postAccount(username, passcode, signIn){
+alert("making accounts");
+	$.when(db_functions.postAccount(username, passcode, signIn)).done(function(){
 		console.log("postAccount finish");
+		return reply;
 	});
 }
 

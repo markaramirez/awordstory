@@ -72,3 +72,13 @@ function loginRegister(){
 	}
 }
 
+function submitPost(){
+	console.log(localStorage.getItem("user_id"));
+	if(localStorage.getItem("user_id") === "-1"){
+		document.getElementById("anon").style.display = "block";
+		document.getElementById("submitbtn").style.display = "none";
+	}
+	else{
+		
+	}
+}

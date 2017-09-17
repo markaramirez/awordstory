@@ -23,7 +23,7 @@ var db_functions = (function($){
 			success: function(response){
                 console.log(response);
 				if(Number.isInteger(parseInt(response))){
-					//TODO: something when login is good
+					localStorage.setItem("user_id", response);
 					document.getElementById("signin").style.display = "none";
 				}
 				else{

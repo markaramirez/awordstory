@@ -7,14 +7,17 @@
 	}
 	else{
 		$user_id = $_POST['$user_id'];
-		$query = "SELECT * FROM `post` WHERE user_id = '$user_id';";
+		$query = "SELECT * FROM `post` WHERE post_id = (SELECT post_id FROM `account_post` WHERE user_id = '$user_id');";
 		$getPosts = mysqli_query($connection, $query);
 		if(!$getPosts){
-            echo("console.log(Posts failed to be retreived);");
+            echo("Posts failed to be retreived");
         }
         else{
-            echo("console.log(Retrieved the posts sucessfully);");
-			echo(json_encode(mysqli_fetch_assoc($getPosts)));
+			$ary = array();
+            while($row = mysqli_fetch_array($getPosts)){
+				$ary[] = $row;
+			}
+			echo(json_encode($ary));
         }
 	}
 

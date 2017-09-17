@@ -1,6 +1,6 @@
 <?php
 
-	$connection = mysqli_connect("../../../../../var/lib/mysql", "root", "jaejaebinks88", "wordstory");
+	$connection = mysqli_connect("localhost", "root", "jaejaebinks88", "wordstory");
 	{
 		echo("console.log(db connection failed);");
 	}

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"></link>
     <link rel="stylesheet" href="style.css"</link>
   </head>
-  <body>
+  <body onload="localStorage.setItem('user_id', '-1');">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
       <!-- <a class="navbar-brand" href="#">A Word Story</a> -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,14 +39,62 @@
         <div class="form-group">
           <textarea class="form-control" id="storyTextArea" rows="18"></textarea>
           <p></p>
-          <div class="sub"><button type="button" class="btn btn-primary">Submit</button></div>
+          <div class="sub"><button type="button" class="btn btn-primary" id="submitbtn" onclick="submitPost();">Submit</button></div>
         </div>
       </div>
-
+      <div id="anon" style="display:none;">
+      		<div class="alert alert-danger" role="alert">
+      		  You are not logged in! You can still submit anonymously, but you cannot save your post under an account.
+      		</div>
+      		<div class="col-xs-4"><button type="button" class="btn btn-warning" onclick="submitAnon();">Submit Anonymously</button></div>
+      		&nbsp
+      		<div class="col-xs-4"><button type="button" class="btn btn-info" onclick="toggleLogin();">Login/Register</button></div>
+      </div>
       <div id="Community" style="display:none;">
 		    <h1>Community</h1>
-        <h3>Family</h3>
-      </div>
+        <p style="font-size: 16px">Read the stories that spawned from a random word each day! Rate and comment on them to encourage them to keep doing what they're doing!</p>
+        <div class="container2" style="font-size: 24px">
+          <div class="row">
+            <div class="col">Family</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/16/17</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">Vacant</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/15/17</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">Gift</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/14/17</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">Control</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/13/17</div>
+          </div>
+          <hr>
+        </div>
 
       <div id="Profile" style="display:none;">
 		    <h1>Profile</h1>

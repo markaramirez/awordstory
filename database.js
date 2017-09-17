@@ -25,6 +25,7 @@ var db_functions = (function($){
 				if(Number.isInteger(parseInt(response))){
 					localStorage.setItem("user_id", response);
 					document.getElementById("signin").style.display = "none";
+					document.getElementById("submitbtn").style.display = "block";
 				}
 				else{
 					document.getElementById("signinreply").innerHTML = response;

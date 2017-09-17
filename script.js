@@ -82,3 +82,8 @@ function submitPost(){
 		
 	}
 }
+
+function anonToggle(){
+	document.getElementById("anon").style.display = "none";
+	document.getElementById("signin").style.display = "block";
+}

@@ -21,6 +21,9 @@ function showCommunity(){
 	document.getElementById("Community").style.display = 'block';
 	document.getElementById("Profile").style.display = 'none';
 	document.getElementById("About").style.display = 'none';
+	
+	getAllPosts();
+	console.log(POSTS);
 }
 
 function showProfile(){
@@ -79,11 +82,15 @@ function submitPost(){
 		document.getElementById("submitbtn").style.display = "none";
 	}
 	else{
-		
+		postPost(document.getElementById("wordoftheday").innerHTML, document.getElementById("storyTextArea").value, localStorage.getItem("user_id"));
 	}
 }
 
 function anonToggle(){
 	document.getElementById("anon").style.display = "none";
 	document.getElementById("signin").style.display = "block";
+}
+
+function submitAnon(){
+	postPost(document.getElementById("wordoftheday").innerHTML, document.getElementById("storyTextArea").value, -1);
 }

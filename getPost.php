@@ -12,8 +12,11 @@
             echo("console.log(Posts failed to be retreived);");
         }
         else{
-            echo("console.log(Retrieved the posts sucessfully);");
-			echo(json_encode(mysqli_fetch_assoc($getPosts)));
+			$ary = array();
+            while($row = mysqli_fetch_array($getPosts)){
+				$ary[] = $row;
+			}
+			echo(json_encode($ary));
         }
 	}
 

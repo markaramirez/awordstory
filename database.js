@@ -1,4 +1,4 @@
-var POSTS = new Array();
+
 
 var db_functions = (function($){
 	var postPosts = function(topic, body, user_id){
@@ -8,6 +8,8 @@ var db_functions = (function($){
 			data: {topic:topic, body:body, user_id:user_id},
 			success: function(response){
                 console.log(response);
+				document.getElementById("anon").style.display = "none";
+				document.getElementById("submitbtn").style.display = "block";
 			},
 			error: function(response){
                 console.log(response);
@@ -57,7 +59,9 @@ var db_functions = (function($){
 			url:"getPost.php",
 			data: {},
 			success: function(response){
+				console.log(response);
                 POSTS = eval(response);
+				console.log(POSTS);
 			},
 			error: function(response){
                 console.log(response);
@@ -109,13 +113,14 @@ function postVotes(user_id, post_id, vote){
 function getAllPosts(){
 	$.when(db_functions.getAllPosts()).done(function(){
 		console.log("getAllPosts finish");
+		return POSTS;
 	});
-	return POSTS;
+	
 }
 
 function getUserPosts(user_id){
 	$.when(db_functions.getUserPosts(user_id)).done(function(){
 		console.log("getUserPosts finish");
+		return POSTS;
 	});
-	return POSTS;
 }

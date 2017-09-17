@@ -24,12 +24,9 @@ function showCommunity(){
 	document.getElementById("comStoryBtn1").story = "This is the story of the modal";
 	$('#storyModal').on('show.bs.modal', function (event) {
 	  var button = $(event.relatedTarget) // Button that triggered the modal
-	  var storyText = button.data('story') // Extract info from data-* attributes
-	  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-	  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
 	  var modal = $(this)
-	  modal.find('.modal-title').text('This story info')
-	  modal.find('.modal-body input').val(storyText)
+	  modal.find('.modal-title').text('Family - Anonymous')
+	  //modal.find('.modal-body input').val(recipient)
 	})
 	//getAllPosts();
 	//

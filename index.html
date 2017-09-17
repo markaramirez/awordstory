@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css"</link>
   </head>
   <body onload="localStorage.setItem('user_id', '-1');">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" style="background-color: #599732">
-      <a class="navbar-brand">A Word Story<img src="Logo_Outline_256.png" width="50" height="64" alt=""></a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand"><img src="Logo_Outline_256.png" width="50" height="64" alt="">A Word Story</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,9 +35,10 @@
     <div class="container">
       <div id="write">
         <!--<h1>A Word Story</h1>-->
+        <p></p>
         <div class="writeIntro"><p align="left">Write a short story based on the word of the day. When you're done, share it! You can check out everyone else's stories in the 'Community' tab.</p>
         <p>Today's word of the day: </p></div>
-        <h1 id="wordoftheday" class="text-center"><b>FAMILY</b></h1>
+        <h1 id="wordoftheday" class="text-center">FAMILY</h1>
         <div class="form-group">
           <textarea class="form-control" id="storyTextArea" rows="18"></textarea>
           <p></p>
@@ -53,6 +54,37 @@
       		<div class="col-xs-4"><button type="button" class="btn btn-info" onclick="anonToggle();">Login/Register</button></div>
       </div>
       <div id="Community" style="display:none;">
+
+        <div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="Story 1 Example" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Example Story 1</h5>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div>
+                    <label for="word-title" class="form-control-label">Family</label>
+                    <label type="text" class="form-control" id="story">
+                      <p style="word-wrap: normal;">
+                      In the context of human society, a family (from Latin: familia) is a group of people affiliated either by consanguinity (by recognized birth), affinity (by marriage or other relationship), or co-residence (as implied by the etymology of the English word "family"[1]) or some combination of these. Members of the immediate family may include spouses, parents, brothers, sisters, sons, and daughters. Members of the extended family may include grandparents, aunts, uncles, cousins, nephews, nieces, and siblings-in-law. Sometimes these are also considered members of the immediate family, depending on an individual's specific relationship with them.
+                     </p>
+                    </label>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light upvote-style white" aria-label="+1">
+                <button type="button" class="btn btn-light downvote-style white" aria-label="-1">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
 		    <h1>Community</h1>
         <p style="font-size: 16px">Read the stories that spawned from a random word each day! Rate and comment on them to encourage them to keep doing what they're doing!</p>
         <hr>
@@ -68,32 +100,51 @@
             <div class="col">9/16/17</div>
           </div>
           <div class="row">
+
             <div class="col">
-              <button id="comStoryBtn1" type="button" class="btn btn-light" data-toggle="modal" data-target="#storyModal" data-story=""> Story 1 Example</button>
-              <div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="Story 1 Example" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modalTitle">Example Story 1</h5>
-                    </div>
-                    <div class="modal-body">Here is an example story that lives inside of this modal. Don't worry, stories will look good here.</div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-light upvote-style white" aria-label="+1">
-                      <button type="button" class="btn btn-light downvote-style white" aria-label="-1">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                  </div>
-                </div>
+              <div class="span2">
+                <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>In the context of human society, a family...</p>
+                    <footer><i>Anonymous</i></footer>
+                  </blockquote>
+                </button>
               </div>
             </div>
-            <div class="col"> </div>
-            <div class="col"> </div>
-            <div class="col"> </div>
-            <div class="col"> </div>
-            <div class="col"> </div>
-            <div class="col"> </div>
+            <div class="col">
+              <div class="span2">
+              <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                <blockquote class="text-left">
+                  <p>I took all of my things, and vowed...</p>
+                  <footer><i>Mark</i></footer>
+                </blockquote>
+              </button>
+            </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <!-- Buttons in column 1, 'Family'-->
+              <div class="span2">
+                <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>Family used to be the only thing...</p>
+                    <footer><i>RandomUserTed</i></footer>
+                  </blockquote>
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="span2">
+              <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                <blockquote class="text-left">
+                  <p>It's just like mother always told me...</p>
+                  <footer><i>Anonymous</i></footer>
+                </blockquote>
+              </button>
+            </div>
+            </div>
           </div>
           <hr>
           <div class="row">
@@ -104,6 +155,29 @@
             <div class="col"> </div>
             <div class="col"> </div>
             <div class="col">9/15/17</div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <!-- Buttons in column 1, 'Family'-->
+              <div class="span2">
+                <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>Above all, what I remember the most is the hunger...</p>
+                    <footer><i>Anonymous</i></footer>
+                  </blockquote>
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="span2">
+              <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>Gone. Every last one of them had vanished...</p>
+                    <footer><i>Anonymous</i></footer>
+                  </blockquote>
+                </button>
+              </div>
+            </div>
           </div>
           <hr>
           <div class="row">

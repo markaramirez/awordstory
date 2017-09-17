@@ -5,9 +5,13 @@ h2 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.navbar-default {
+.navbar {
   background: #599732;
 }
 .upvote-style {background-color:#ffa500;}
 .downvote-style {background-color:#8b008b;}
 .white {color:#ffffff;}
+
+.btn-primary {
+  background-color: #599732;
+}

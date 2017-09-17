@@ -1,7 +1,6 @@
 <?php
 
-	$connection = mysqli_connect("localhost", "root", "", "wordstory");
-	if(mysqli_connect_errno())
+	$connection = mysqli_connect("localhost", "root", "jaejaebinks88", "wordstory");
 	{
 		echo("console.log(db connection failed);");
 	}

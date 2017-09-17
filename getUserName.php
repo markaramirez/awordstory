@@ -1,6 +1,6 @@
 <?php
 
-	$connection = mysqli_connect("http://45.33.116.130/", "root", "jaejaebinks88", "wordstory");
+	$connection = mysqli_connect("../../../../../var/lib/mysql", "root", "jaejaebinks88", "wordstory");
 	if(mysqli_connect_errno())
 	{
 		echo("console.log(db connection failed);");

@@ -1,5 +1,6 @@
 # A Word Story 
 ![alt text](https://github.com/markaramirez/awordstory/blob/master/Logo_Outline_256.png "A Word Story Logo")
+
 *A Word Story* is a platform to practice writing and connect with other writers by writing, sharing, and reading daily stories that are based on given daily words.
 
 

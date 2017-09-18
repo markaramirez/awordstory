@@ -16,4 +16,4 @@ Even if you don't write, or if you just want to take a break from writing, you c
 
 Cool, right? Head on over to the 'Write' tab to start writing, the 'Community' tab to start reading, or the 'Profile' tab to make an account!
 
-# awordstory.com
+# [awordstory.com](http://awordstory.com)

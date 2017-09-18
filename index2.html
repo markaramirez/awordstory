@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>A Word Story</title>
+    <link rel="icon" type="image/png" href="Logo_Outline_256.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"></link>
+    <link rel="stylesheet" href="style.css"</link>
+  </head>
+  <body onload="localStorage.setItem('user_id', '-1');">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand"><img src="Logo_Outline_256.png" width="50" height="64" alt="">A Word Story</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active" id="write_nav" onclick="showWrite();">
+            <a class="nav-link" href="#" >Write</a>
+          </li>
+          <li class="nav-item" id="Community_nav" onclick="showCommunity();">
+            <a class="nav-link" href="#">Community</a>
+          </li>
+          <li class="nav-item" id="Profile_nav" onclick="showProfile();">
+            <a class="nav-link" href="#" >Profile</a>
+          </li>
+          <li class="nav-item" id="About_nav" onclick="showAbout();">
+            <a class="nav-link" href="#" >About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div id="write">
+        <p style="padding-top: 200px"> Unfortunately, A Word Story is under construction at the moment, please check back again later.</p>
+        <p>Please do not enter any sensitive information into the website yet.</p>
+        <div class="writeIntro"><p align="left">Write a short story based on the word of the day. When you're done, share it! You can check out everyone else's stories in the 'Community' tab.</p>
+        <p>Today's word of the day: </p></div>
+        <h1 id="wordoftheday" class="text-center">FAMILY</h1>
+        <div class="form-group">
+          <textarea class="form-control" id="storyTextArea" rows="18"></textarea>
+          <p></p>
+          <div class="sub"><button type="button" class="btn btn-primary" id="submitbtn" onclick="submitPost();">Submit</button></div>
+        </div>
+      </div>
+      <div id="anon" style="display:none;">
+      		<div class="alert alert-danger" role="alert">
+      		  You are not logged in! You can still submit anonymously, but you cannot save your post under an account.
+      		</div>
+      		<div class="col-xs-4"><button type="button" class="btn btn-warning" onclick="submitAnon();">Submit Anonymously</button></div>
+      		&nbsp
+      		<div class="col-xs-4"><button type="button" class="btn btn-info" onclick="anonToggle();">Login/Register</button></div>
+      </div>
+      <div id="Community" style="display:none;">
+
+        <div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="Story 1 Example" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Example Story 1</h5>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div>
+                    <label for="word-title" class="form-control-label">Family</label>
+                    <label type="text" class="form-control" id="story">
+                      <p style="word-wrap: normal;">
+                      In the context of human society, a family (from Latin: familia) is a group of people affiliated either by consanguinity (by recognized birth), affinity (by marriage or other relationship), or co-residence (as implied by the etymology of the English word "family"[1]) or some combination of these. Members of the immediate family may include spouses, parents, brothers, sisters, sons, and daughters. Members of the extended family may include grandparents, aunts, uncles, cousins, nephews, nieces, and siblings-in-law. Sometimes these are also considered members of the immediate family, depending on an individual's specific relationship with them.
+                     </p>
+                    </label>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light upvote-style white" aria-label="+1">
+                <button type="button" class="btn btn-light downvote-style white" aria-label="-1">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+		    <h1 style="padding-top: 100px">Community</h1>
+        <p style="font-size: 16px">Read the stories that spawned from a random word each day! Rate and comment on them to encourage them to keep doing what they're doing!</p>
+        <hr>
+        <p></p>
+        <div class="container2" style="font-size: 24px">
+          <div class="row">
+            <div class="col">Family</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/16/17</div>
+          </div>
+          <div class="row">
+
+            <div class="col">
+              <div class="span2">
+                <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>In the context of human society, a family...</p>
+                    <footer><i>Anonymous</i></footer>
+                  </blockquote>
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="span2">
+              <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                <blockquote class="text-left">
+                  <p>I took all of my things, and vowed...</p>
+                  <footer><i>Mark</i></footer>
+                </blockquote>
+              </button>
+            </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <!-- Buttons in column 1, 'Family'-->
+              <div class="span2">
+                <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>Family used to be the only thing...</p>
+                    <footer><i>RandomUserTed</i></footer>
+                  </blockquote>
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="span2">
+              <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                <blockquote class="text-left">
+                  <p>It's just like mother always told me...</p>
+                  <footer><i>Anonymous</i></footer>
+                </blockquote>
+              </button>
+            </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">Vacant</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/15/17</div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <!-- Buttons in column 1, 'Family'-->
+              <div class="span2">
+                <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>Above all, what I remember the most is the hunger...</p>
+                    <footer><i>Anonymous</i></footer>
+                  </blockquote>
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="span2">
+              <button id="comStoryBtn1" type="button" class="btn btn-light btn-block" data-toggle="modal" data-target="#storyModal" data-story="">
+                  <blockquote class="text-left">
+                    <p>Gone. Every last one of them had vanished...</p>
+                    <footer><i>Anonymous</i></footer>
+                  </blockquote>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">Gift</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/14/17</div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col">Control</div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col"> </div>
+            <div class="col">9/13/17</div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      <div id="Profile" style="display:none;">
+		    <h1 style="padding-top: 100px">Profile</h1>
+        <h3>Mark Ramirez</h3>
+        <hr>
+        <h4>My Stories</h4>
+        <div class="row">
+          <div class="col">
+            <button id="comStoryBtn1" type="button" class="btn btn-light" data-toggle="modal" data-target="#storyModal" data-story=""> Story 1 Example</button>
+            <div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="Story 1 Example" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Example Story 1</h5>
+                  </div>
+                  <div class="modal-body">Here is an example story that lives inside of this modal. Don't worry, stories will look good here.</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-light upvote-style white" aria-label="+1">
+                    <button type="button" class="btn btn-light downvote-style white" aria-label="-1">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <button id="comStoryBtn2" type="button" class="btn btn-light" data-toggle="modal" data-target="#storyModal" data-story=""> Story 2 Example</button>
+            <div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="Story 2 Example" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Example Story 2</h5>
+                  </div>
+                  <div class="modal-body">Here is an example story that lives inside of this modal. Don't worry, stories will look good here.</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-light upvote-style white" aria-label="+1">
+                    <button type="button" class="btn btn-light downvote-style white" aria-label="-1">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <button id="comStoryBtn3" type="button" class="btn btn-light" data-toggle="modal" data-target="#storyModal" data-story=""> Story 3 Example</button>
+            <div class="modal fade" id="storyModal" tabindex="-1" role="dialog" aria-labelledby="Story 3 Example" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Example Story 3</h5>
+                  </div>
+                  <div class="modal-body">Here is an example story that lives inside of this modal. Don't worry, stories will look good here.</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-light upvote-style white" aria-label="+1">
+                    <button type="button" class="btn btn-light downvote-style white" aria-label="-1">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col"> </div>
+          <div class="col"> </div>
+          <div class="col"> </div>
+          <div class="col"> </div>
+        </div>
+      </div>
+
+      <div id="About" style="display:none;">
+		    <h1 style="padding-top: 100px">About</h1>
+        <p style="padding-top: 20px"><i>A Word Story</i> is a platform to practice writing and connect with other writers by writing, sharing, and reading daily stories that are based on given daily words.</p>
+        <p>Each day, a new word is generated and is made the prompt for that day and it is your job to flex your creative muscles and write a short story based around this word. After you finish, you'll share it with the community either anonymously or under your profile.</p>
+        <p>All of these stories function as bridges between writers that allow for feedback to be given/received and for connections to be made.</p>
+        <p>Writing daily is very important to us because it does such a good job of solidifying writing fundamentals and practicing creative thinking. This combined with the random word prompt will challenge your creativity and will most likely lead to stories that you might not care for. However, the idea isn't to write perfect stories but rather to keep on writing and keep on receiving feedback.</p>
+        <p>Even if you don't write, or if you just want to take a break from writing, you can enjoy the daily stories generated by other users and see how each individual tackled the same prompt differently. After reading, you can rate stories and leave comments to encourage other writers to keep on honing their skills.</p>
+        <p>Cool, right? Head on over to the 'Write' tab to start writing, the 'Community' tab to start reading, or the 'Profile' tab to make an account!</p>
+      </div>
+
+	  <div id="signin" style="display:none;">
+		<table>
+		<tr onclick="toggleLogin();"><th>
+		<h1 id="sign-in" style="user-select: none;cursor: pointer;">Sign-In</h1></th><th><h1 style="cursor: pointer;user-select: none;" id="register" class="text-muted">&nbsp Register</h1>
+		</th></tr>
+		</table>
+			<label for="exampleInputEmail1">Username</label>
+			<input type="text" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+			<small id="emailHelp" class="form-text text-muted">This is the name people will see under your posts!</small>
+			<label for="exampleInputPassword1">Password</label>
+			<input type="password" class="form-control" id="InputPassword1" placeholder="Enter Password">
+		  <small id="signinreply" class="form-text text-danger"></small>
+		  <button type="submit" class="btn btn-primary" onclick="loginRegister();">Submit</button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<script> var POSTS = new Array();</script>
+	<script src="script.js"></script>
+	<script src="database.js"></script>
+  </body>
+</html>

@@ -1,0 +1,826 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:');
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+<style>
+
+</style>
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Meyer Reset CSS */
+
+img {
+	max-width: 100%; /*makes images scale with flexible grids*/
+	display: block; /*removes tiny space added in some browsers below images */
+}
+
+html {
+    font-size:12pt; /* Adjust for REM */
+	line-height: 1;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+.wrapper {
+    position: static;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+}
+
+header {
+    position:static;
+    width:100%;
+}
+
+/* Logo */
+
+.logo {
+    width: 287px;
+    padding-top:1.8rem;
+    padding-bottom:1.8rem;
+}
+
+.logo_name {
+    float:left;
+    
+}
+
+nav {
+    position:static;
+    width:100%;
+    background-color: #EDEDEE;
+    padding-left: 5%;
+}
+
+.hero {
+    width:100%;
+    background-image: url(images/barcelona.jpg);
+    background-repeat: no-repeat;
+    /*height: 100vh;*/
+    padding-top:9rem;
+    padding-left:5%;
+    padding-bottom:9rem;
+    
+}
+
+button{
+    background-color: #0AD6AD;
+    padding:12px 12px 12px 12px;
+    border-radius: 5px;
+    font-family:'work-sans', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    border: none; 
+    float: left;
+    outline: none;
+    transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+    cursor: pointer;
+    
+}
+
+button:hover {
+    background-color: #D9D8D6;
+    color: #363743;
+    font-family:'work-sans', sans-serif;
+    font-weight: 520;
+}
+
+
+/* section */
+
+section {
+    position: static;
+    width:100%;
+    
+    /*background-color: green;*/
+}
+
+
+.hero_text {
+    width:40.25%;
+    padding:5%;
+    padding-bottom: 6%;
+    background-color: #363742;
+    box-shadow: 2px 2px 8px #383838;
+}
+
+.hero_image {
+    width:100%;
+    max-width:1200px;
+    margin:0;
+}
+
+.hero_headline {
+    color:white;
+}
+
+.hero_subheadline {
+    color:white;
+}
+
+/*article*/
+
+article {
+    position:static;
+    width:100%;
+}
+
+.map {
+    position:static;
+    float:left;
+    width:40%;
+    height: 25rem;
+    overflow: auto;
+    padding:5%;
+}
+
+#mainMap {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.next_meeting p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    line-height:1.5rem;
+    font-weight:300;
+    color:#363843;
+
+}
+
+
+.upcoming_meeting {
+    width:40%;
+    position:static;
+    float:left;
+    margin:0;
+    overflow: hidden;
+    padding-left: 5%;
+    margin-bottom: 3rem;
+}
+
+
+.upcoming_meeting h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height:2.25rem;
+}
+
+.next_meeting h1{
+    margin-top: 3rem;
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight:300;
+}
+
+
+p   {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    line-height:1.5rem;
+    font-weight:300;
+}
+
+/* 
+
+.forms {
+    margin-top: 6rem;
+    width: 100%;   
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    line-height:1.5rem;
+    font-weight:300; 
+}
+
+.formstart {
+  margin-top: 1rem;
+  float: left;
+  width:70%;
+  border-radius: 5px;
+  font-family:'work-sans', sans-serif;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+#startlocation {
+    background-color: #F6F6F6;
+}
+
+
+#endlocation {
+     background-color: #F6F6F6;
+}
+**/
+
+.indexform {
+    width: 81%;
+}
+
+
+#startlocation {
+  background-color: white;
+  float: left;
+  padding:12px 12px 12px 12px;
+  width:92%;
+  border-radius: 5px;
+  font-family:'work-sans', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: lightgray;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+
+
+
+#endlocation {
+  background-color: white;
+  float: left;
+  padding:12px 12px 12px 12px;
+  width:79%;
+  border-radius: 5px;
+  font-family:'work-sans', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: lightgray;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+ --------------------------
+
+
+button,.go  {
+    background-color: #363843;
+    display: inline;
+    padding:12px 10px 12px 10px;
+    border-radius: 5px;
+    font-family:'work-sans', sans-serif;
+    font-size: 1em;
+    color: white;
+    border: none; 
+    float: left;
+}
+
+
+/*form {
+    width:100%;
+    position:static;
+    float:left;
+    /*background-color: magenta;*/
+}
+
+./*form {
+    margin-top:1rem;
+    font-family: 'Roboto';
+    font-style: 
+}*/
+
+
+
+/* table */
+
+
+header {
+    position: static;
+    width:100%;
+}
+
+
+
+ul {
+    position: static;
+    width:80%;
+    float:left;
+    margin:0;
+}
+
+li {
+    /*background-color: teal;*/
+    width:20%;
+    margin:0;
+}
+
+.table p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    line-height:1.5rem;
+    font-weight:300;
+    color:#363843
+}
+
+
+/* table  
+
+.table {
+    width:90%;
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+*/
+
+.table-options {
+    font-family: "Work Sans", Helvetica, sans-serif;
+    border-collapse:separate;
+    font-weight: 300;
+    border-spacing: 10px;
+    width:90%;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table-options td, .table-options th {
+    font-family: "Work Sans",  Helvetica, sans-serif;
+    font-weight: 400;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2%;       
+}
+
+td {
+    padding-bottom: 1.9%;
+    background-color: none;
+    border-bottom: .2px solid #EDEDEE;
+    padding-left: 1%;
+
+}
+
+.table-options tr:hover {background-color:none;}
+
+.table-options th {
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    background-color: #363843;
+    color: white;
+}
+
+
+
+.bestoption {
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    color: #0AD6AD;
+    font-size: .7rem;
+    line-height: 1.8rem
+}
+
+
+
+.table-options button{
+    background-color: #363843;
+    padding:4px 4px 4px 4px;
+    border-radius: 5px;
+    font-family:'work-sans', sans-serif;
+    font-size: .5rem;
+    color: white;
+    border: none; 
+    float: left;
+    outline: none;
+    transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+    cursor: pointer;
+    display: inline;
+    letter-spacing: .6px;
+    margin-right: 2%;
+}
+
+.tablebutton:hover {
+    background-color: #0AD6AD;
+    color: white;
+}
+/* Ready to get started*/
+
+.offering-best-transit {
+    position:static;
+    width:95%;
+    padding-left:5%;
+    padding-right:5%;
+    background-image: url(images/barcelona.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+.CTA {
+    width:26%;
+    float:left;
+    background-color: #363843; 
+    padding:2%;
+    margin-right:2%;
+}
+
+p, .CTA-white {
+    margin-top: 0;
+    color:white;
+}
+
+h2, .CTA-green {
+    margin-top: 1rem;
+    margin-bottom: .6rem;
+    color:#0AD6AD;
+}
+
+.o-b-t_headline {
+    padding:5% 0% 0% 0%;
+    color:white;
+}
+
+.o-b-t_backgroundcolor {
+    position:static;
+    float:left;
+    width:95%;
+    margin-top:5rem;
+    margin-bottom: 5rem;
+    margin-right:5%;
+    padding-left:5%;
+    overflow: hidden;
+    background-color: #363843;
+    
+}
+
+.o-b-t_button {
+    margin-bottom:5rem;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    position: static;
+    background-color: #363843 ;
+    width:95%;
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom:1%;
+}
+
+
+
+.footer_logo img {
+    position: static;
+    width: 187px;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    overflow: hidden;
+}
+
+.footer_logo p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: .7rem;
+    color: whitesmoke;
+    line-height:1rem;
+    font-weight:300;
+    display: inline-block;
+    padding-right: 1%;
+    
+}
+
+
+
+
+/* ONBOARDING PAGE  */
+
+.onboarding-div {
+    position: static;
+    height: 100vh;
+    padding-top:5%;
+}
+
+.onboarding-1 {
+    position:static;
+    width:50%;
+    padding-left: 5%;
+}
+
+
+.onboarding-1, h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    line-height:2.25rem;
+    margin:0;
+}
+
+
+
+onboarding-1, p   {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    line-height:1.5rem;
+    font-weight:400;
+    color: black;
+}
+
+.onboarding-2 {
+    position:static;
+    width:40%;
+}
+
+.onboarding-heading {
+    position:static;
+    width:95%;
+    padding:2% 5% 2% 5%;
+    background-image: url(images/barcelona-header.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+.home {
+  float: left;
+  width:100%;
+  border-radius: 5px;
+  font-family:'work-sans', sans-serif;
+}
+
+button {
+    float: left;
+    margin-right: 2%;
+}
+
+#homeaddress {
+  background-color: white;
+  float: left;
+  padding:12px 12px 12px 12px;
+  width:70%;
+  border-radius: 5px;
+  font-family:'work-sans', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: lightgray;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+
+
+
+#workaddress {
+  background-color: white;
+  float: left;
+  padding:12px 12px 12px 12px;
+  width:70%;
+  border-radius: 5px;
+  font-family:'work-sans', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: lightgray;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+
+
+.save {
+    width: 20%;
+    background-color: #D9D8D6;
+    padding:12px 12px 12px 12px;
+    border-radius: 5px;
+    font-family:'work-sans', sans-serif;
+    font-size: 1em;
+    color: white;
+    border: none; 
+    float: left;
+}
+
+.next{
+    width: 20%;
+    background-color: #0AD6AD;
+    padding:12px 12px 12px 12px;
+    border-radius: 5px;
+    font-family:'work-sans', sans-serif;
+    font-size: 1em;
+    color: white;
+    border: none; 
+    float: left;
+    outline: none;
+}
+
+.onboarding-0{
+    padding-left: 5%;
+    width: 40%;
+}
+
+/******* Buttons for onboarding 2 ***/
+.onboarding-2{
+    padding-left: 5%;
+    width: 25%;
+
+}
+
+
+.onboarding-2 .gray:hover {
+    position: relative;
+    font-family: 'work-sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    background-color:#363843;
+    margin-bottom:1rem;
+    border-radius:5px;
+
+}
+
+.onboarding-2 .gray {
+    color: #363843;
+    padding:10px 10px 10px ;
+
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+    background-color:#EDEDED; 
+}
+
+  /*  
+#transport-1 {
+    text-align: center;
+    width: 100%;
+    float: left;
+    /*padding-top: 6px;
+    padding-bottom: 4px;
+    margin-top: 1em;
+    padding:5%;
+    color: #30516b;
+    font-size: 1rem;
+    display:hidden;
+    transition-duration: 0.3s; /* Safari 
+    cursor:pointer;   
+}
+
+    
+.to-be-changedUber {
+    text-align: center;
+    width: 200px;
+    float: left;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    color: #01a1f2;
+    font-size: .9em;
+    line-height: 1.1em;
+    background-color:white;
+    overflow:hidden;
+}
+
+
+    input[type=checkbox] {
+    position: absolute;
+    display: none;}
+
+*/
+/*.border {
+    margin-left: 49%;
+    height: 100%;
+    position: absolute;
+    width: 1px;
+    border-right: 2px solid #30516b;
+}
+    
+input[type=checkbox]:checked ~ .to-be-changedUber {
+    background-color: gray;}
+
+li {
+    padding:5%;
+}
+
+*/
+
+
+/* main map style */
+
+.eventdetails{
+    width: 40%;
+    margin-top: 3.5rem;
+    padding-left: 5%;
+    float: left;
+    position: static;
+    
+}
+
+
+.eventdetails h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    margin-top: .3rem;
+}
+
+
+
+
+.eventdetails p   {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    font-weight:400;
+    width: auto;
+    text-align: left;
+}
+
+.eventdetails img{
+    width:3%;
+    float: left;
+    margin-right: 3%;
+    padding-bottom: .7rem;
+}
+.eventdetails .time{
+    width:3.5%;
+    float: left;
+    margin-right: 3%;
+    padding-top: .19rem;
+}
+
+.eventdate {
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #4DBFA3;
+    font-size: 1rem;
+    opacity: .8
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
